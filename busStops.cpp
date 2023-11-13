@@ -1,7 +1,11 @@
 class Solution {
 public:
     int numBusesToDestination(vector<vector<int>>& routes, int source, int target) {
-        unordered_map<int,vector<int>> busStopToBid;
+        unordered_map<int,vector<int>> busStopToBid; // here we reverse map routes to bus_id
+        /*
+            example busstops   bid
+                        1       {0,7} indicates that at bus stop 1 bus.no 0 and bus.no 7 meets
+        */
         for(int i=0;i<routes.size();i++){
             int bid=i;
             vector<int> busStops=routes[i];
